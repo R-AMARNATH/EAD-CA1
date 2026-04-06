@@ -1,0 +1,19 @@
+apiVersion: http.keda.sh/v1alpha1
+kind: HTTPScaledObject
+metadata:
+  name: http-target-httpso
+  namespace: lab4
+spec:
+  hosts:
+    - localhost
+  pathPrefixes:
+    - /
+  scaleTargetRef:
+    name: gateway
+    service: gateway-svc
+    port: 80
+  replicas:
+    min: 0
+    max: 5
+  scaledownPeriod: 30
+  targetPendingRequests: 50
