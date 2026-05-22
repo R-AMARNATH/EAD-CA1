@@ -1,0 +1,10 @@
+[
+  {
+    "object": "Unknown",
+    "valid": false,
+    "fileName": "STDIN",
+    "message": "error while parsing: missing 'kind' key",
+    "score": 0,
+    "scoring": {}
+  }
+]

@@ -1,0 +1,20 @@
+rules:
+  - id: course-nodejs-eval
+    message: "Avoid eval() on untrusted input."
+    severity: ERROR
+    languages: [javascript, typescript]
+    pattern: eval($X)
+
+  - id: course-nodejs-child-process-shell
+    message: "Spawning shell commands can be dangerous; validate inputs and prefer safe APIs."
+    severity: WARNING
+    languages: [javascript, typescript]
+    pattern-either:
+      - pattern: require('child_process').exec($CMD)
+      - pattern: require('child_process').execSync($CMD)
+
+  - id: course-hardcoded-secret-pattern
+    message: "Potential hard-coded secret/token pattern."
+    severity: WARNING
+    languages: [javascript, typescript]
+    pattern-regex: "(sk_test_|AKIA[0-9A-Z]{16}|-----BEGIN( RSA)? PRIVATE KEY-----)"
