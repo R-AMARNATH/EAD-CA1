@@ -1,0 +1,18 @@
+lab9/
+├── lab9.0.md
+├── gateway/
+│   ├── package.json
+│   └── server.js
+├── manifests/
+│   ├── 00-namespace.yaml
+│   ├── 10-pricing.yaml
+│   ├── 11-inventory.yaml
+│   ├── 12-checkout.yaml
+│   ├── 20-gateway.yaml
+│   ├── 30-ingress.yaml
+│   └── 31-ingress-tls.yaml
+├── scripts/
+│   └── curl_tests.sh
+├── examples/
+│   └── gateway-local.env.example
+└── tls/

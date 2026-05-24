@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lab9-gateway
+  namespace: lab4
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - localhost
+      secretName: lab9-tls
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gateway-svc
+                port:
+                  number: 80
